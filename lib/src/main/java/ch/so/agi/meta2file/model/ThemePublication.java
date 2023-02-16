@@ -77,7 +77,14 @@ public class ThemePublication {
      * Verantwortliche technische Stelle
      */
     @NotNull
-    private Office servicer; 
+    private Office servicer;
+
+    /**
+     * Host-URL der Datenablage (Linker Teil der URL vor Pfad). Bsp: https://files-t.geo.so.ch
+     */
+    @NotNull
+    private URI downloadHostUrl;
+
     /**
      * Link zu weiteren Informationen
      */
@@ -237,5 +244,12 @@ public class ThemePublication {
     }
     public void setWgcPreviewLayer(Layer wgcPreviewLayer) {
         this.wgcPreviewLayer = wgcPreviewLayer;
+    }
+    public URI getDownloadHostUrl() {
+        return downloadHostUrl;
+    }
+
+    public void setDownloadHostUrl(URI downloadHostUrl) {
+        this.downloadHostUrl = downloadHostUrl;
     }
 }

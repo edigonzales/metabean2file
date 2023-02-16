@@ -35,6 +35,7 @@ public class Read {
         }
 
         deriveWgcPreview(res);
+        setDownloadUrl(res, env);
         setServiceEndpointUrls(res, env);
         setLicense(res, env);
 
@@ -43,6 +44,10 @@ public class Read {
 
     private static void setLicense(ThemePublication res, Environment env){
         res.setLicence(BaseUrl.LICENCE.getBaseUrlAsUri(env));
+    }
+
+    private static void setDownloadUrl(ThemePublication res, Environment env){
+        res.setDownloadHostUrl(BaseUrl.FILES.getBaseUrlAsUri(env));
     }
 
     private static void setServiceEndpointUrls(ThemePublication res, Environment env){
